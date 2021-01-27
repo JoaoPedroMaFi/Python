@@ -1,0 +1,850 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    NOTREAD
+
+Grammar
+
+Rule 0     S' -> music
+Rule 1     music -> command
+Rule 2     music -> music command
+Rule 3     command -> DOT
+Rule 4     command -> UP
+Rule 5     command -> DOWN
+Rule 6     command -> FAST
+Rule 7     command -> SLOW
+Rule 8     command -> BOUND
+Rule 9     command -> ACM
+Rule 10    command -> MEGAPUSH
+Rule 11    command -> MACRO
+Rule 12    command -> PLAYMACRO
+Rule 13    command -> LETTERNOTE
+Rule 14    command -> PAUSE
+Rule 15    DOT -> .
+Rule 16    UP -> ^
+Rule 17    DOWN -> _
+Rule 18    FAST -> >
+Rule 19    SLOW -> <
+Rule 20    PAUSE -> *
+Rule 21    ACM -> :
+Rule 22    BOUND -> . ~ .
+Rule 23    MEGAPUSH -> ^ { INT }
+Rule 24    MEGAPUSH -> _ { INT }
+Rule 25    MACRO -> MACRONAME = [ music ]
+Rule 26    PLAYMACRO -> BARRA MACRONAME
+Rule 27    LETTERNOTE -> LETRAS
+
+Terminals, with rules where they appear
+
+*                    : 20
+.                    : 15 22 22
+:                    : 21
+<                    : 19
+=                    : 25
+>                    : 18
+BARRA                : 26
+INT                  : 23 24
+LETRAS               : 27
+MACRONAME            : 25 26
+NOTREAD              : 
+[                    : 25
+]                    : 25
+^                    : 16 23
+_                    : 17 24
+error                : 
+{                    : 23 24
+}                    : 23 24
+~                    : 22
+
+Nonterminals, with rules where they appear
+
+ACM                  : 9
+BOUND                : 8
+DOT                  : 3
+DOWN                 : 5
+FAST                 : 6
+LETTERNOTE           : 13
+MACRO                : 11
+MEGAPUSH             : 10
+PAUSE                : 14
+PLAYMACRO            : 12
+SLOW                 : 7
+UP                   : 4
+command              : 1 2
+music                : 2 25 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . music
+    (1) music -> . command
+    (2) music -> . music command
+    (3) command -> . DOT
+    (4) command -> . UP
+    (5) command -> . DOWN
+    (6) command -> . FAST
+    (7) command -> . SLOW
+    (8) command -> . BOUND
+    (9) command -> . ACM
+    (10) command -> . MEGAPUSH
+    (11) command -> . MACRO
+    (12) command -> . PLAYMACRO
+    (13) command -> . LETTERNOTE
+    (14) command -> . PAUSE
+    (15) DOT -> . .
+    (16) UP -> . ^
+    (17) DOWN -> . _
+    (18) FAST -> . >
+    (19) SLOW -> . <
+    (22) BOUND -> . . ~ .
+    (21) ACM -> . :
+    (23) MEGAPUSH -> . ^ { INT }
+    (24) MEGAPUSH -> . _ { INT }
+    (25) MACRO -> . MACRONAME = [ music ]
+    (26) PLAYMACRO -> . BARRA MACRONAME
+    (27) LETTERNOTE -> . LETRAS
+    (20) PAUSE -> . *
+
+    .               shift and go to state 15
+    ^               shift and go to state 16
+    _               shift and go to state 17
+    >               shift and go to state 18
+    <               shift and go to state 19
+    :               shift and go to state 20
+    MACRONAME       shift and go to state 21
+    BARRA           shift and go to state 22
+    LETRAS          shift and go to state 23
+    *               shift and go to state 24
+
+    music                          shift and go to state 1
+    command                        shift and go to state 2
+    DOT                            shift and go to state 3
+    UP                             shift and go to state 4
+    DOWN                           shift and go to state 5
+    FAST                           shift and go to state 6
+    SLOW                           shift and go to state 7
+    BOUND                          shift and go to state 8
+    ACM                            shift and go to state 9
+    MEGAPUSH                       shift and go to state 10
+    MACRO                          shift and go to state 11
+    PLAYMACRO                      shift and go to state 12
+    LETTERNOTE                     shift and go to state 13
+    PAUSE                          shift and go to state 14
+
+state 1
+
+    (0) S' -> music .
+    (2) music -> music . command
+    (3) command -> . DOT
+    (4) command -> . UP
+    (5) command -> . DOWN
+    (6) command -> . FAST
+    (7) command -> . SLOW
+    (8) command -> . BOUND
+    (9) command -> . ACM
+    (10) command -> . MEGAPUSH
+    (11) command -> . MACRO
+    (12) command -> . PLAYMACRO
+    (13) command -> . LETTERNOTE
+    (14) command -> . PAUSE
+    (15) DOT -> . .
+    (16) UP -> . ^
+    (17) DOWN -> . _
+    (18) FAST -> . >
+    (19) SLOW -> . <
+    (22) BOUND -> . . ~ .
+    (21) ACM -> . :
+    (23) MEGAPUSH -> . ^ { INT }
+    (24) MEGAPUSH -> . _ { INT }
+    (25) MACRO -> . MACRONAME = [ music ]
+    (26) PLAYMACRO -> . BARRA MACRONAME
+    (27) LETTERNOTE -> . LETRAS
+    (20) PAUSE -> . *
+
+    .               shift and go to state 15
+    ^               shift and go to state 16
+    _               shift and go to state 17
+    >               shift and go to state 18
+    <               shift and go to state 19
+    :               shift and go to state 20
+    MACRONAME       shift and go to state 21
+    BARRA           shift and go to state 22
+    LETRAS          shift and go to state 23
+    *               shift and go to state 24
+
+    command                        shift and go to state 25
+    DOT                            shift and go to state 3
+    UP                             shift and go to state 4
+    DOWN                           shift and go to state 5
+    FAST                           shift and go to state 6
+    SLOW                           shift and go to state 7
+    BOUND                          shift and go to state 8
+    ACM                            shift and go to state 9
+    MEGAPUSH                       shift and go to state 10
+    MACRO                          shift and go to state 11
+    PLAYMACRO                      shift and go to state 12
+    LETTERNOTE                     shift and go to state 13
+    PAUSE                          shift and go to state 14
+
+state 2
+
+    (1) music -> command .
+
+    .               reduce using rule 1 (music -> command .)
+    ^               reduce using rule 1 (music -> command .)
+    _               reduce using rule 1 (music -> command .)
+    >               reduce using rule 1 (music -> command .)
+    <               reduce using rule 1 (music -> command .)
+    :               reduce using rule 1 (music -> command .)
+    MACRONAME       reduce using rule 1 (music -> command .)
+    BARRA           reduce using rule 1 (music -> command .)
+    LETRAS          reduce using rule 1 (music -> command .)
+    *               reduce using rule 1 (music -> command .)
+    $end            reduce using rule 1 (music -> command .)
+    ]               reduce using rule 1 (music -> command .)
+
+
+state 3
+
+    (3) command -> DOT .
+
+    .               reduce using rule 3 (command -> DOT .)
+    ^               reduce using rule 3 (command -> DOT .)
+    _               reduce using rule 3 (command -> DOT .)
+    >               reduce using rule 3 (command -> DOT .)
+    <               reduce using rule 3 (command -> DOT .)
+    :               reduce using rule 3 (command -> DOT .)
+    MACRONAME       reduce using rule 3 (command -> DOT .)
+    BARRA           reduce using rule 3 (command -> DOT .)
+    LETRAS          reduce using rule 3 (command -> DOT .)
+    *               reduce using rule 3 (command -> DOT .)
+    $end            reduce using rule 3 (command -> DOT .)
+    ]               reduce using rule 3 (command -> DOT .)
+
+
+state 4
+
+    (4) command -> UP .
+
+    .               reduce using rule 4 (command -> UP .)
+    ^               reduce using rule 4 (command -> UP .)
+    _               reduce using rule 4 (command -> UP .)
+    >               reduce using rule 4 (command -> UP .)
+    <               reduce using rule 4 (command -> UP .)
+    :               reduce using rule 4 (command -> UP .)
+    MACRONAME       reduce using rule 4 (command -> UP .)
+    BARRA           reduce using rule 4 (command -> UP .)
+    LETRAS          reduce using rule 4 (command -> UP .)
+    *               reduce using rule 4 (command -> UP .)
+    $end            reduce using rule 4 (command -> UP .)
+    ]               reduce using rule 4 (command -> UP .)
+
+
+state 5
+
+    (5) command -> DOWN .
+
+    .               reduce using rule 5 (command -> DOWN .)
+    ^               reduce using rule 5 (command -> DOWN .)
+    _               reduce using rule 5 (command -> DOWN .)
+    >               reduce using rule 5 (command -> DOWN .)
+    <               reduce using rule 5 (command -> DOWN .)
+    :               reduce using rule 5 (command -> DOWN .)
+    MACRONAME       reduce using rule 5 (command -> DOWN .)
+    BARRA           reduce using rule 5 (command -> DOWN .)
+    LETRAS          reduce using rule 5 (command -> DOWN .)
+    *               reduce using rule 5 (command -> DOWN .)
+    $end            reduce using rule 5 (command -> DOWN .)
+    ]               reduce using rule 5 (command -> DOWN .)
+
+
+state 6
+
+    (6) command -> FAST .
+
+    .               reduce using rule 6 (command -> FAST .)
+    ^               reduce using rule 6 (command -> FAST .)
+    _               reduce using rule 6 (command -> FAST .)
+    >               reduce using rule 6 (command -> FAST .)
+    <               reduce using rule 6 (command -> FAST .)
+    :               reduce using rule 6 (command -> FAST .)
+    MACRONAME       reduce using rule 6 (command -> FAST .)
+    BARRA           reduce using rule 6 (command -> FAST .)
+    LETRAS          reduce using rule 6 (command -> FAST .)
+    *               reduce using rule 6 (command -> FAST .)
+    $end            reduce using rule 6 (command -> FAST .)
+    ]               reduce using rule 6 (command -> FAST .)
+
+
+state 7
+
+    (7) command -> SLOW .
+
+    .               reduce using rule 7 (command -> SLOW .)
+    ^               reduce using rule 7 (command -> SLOW .)
+    _               reduce using rule 7 (command -> SLOW .)
+    >               reduce using rule 7 (command -> SLOW .)
+    <               reduce using rule 7 (command -> SLOW .)
+    :               reduce using rule 7 (command -> SLOW .)
+    MACRONAME       reduce using rule 7 (command -> SLOW .)
+    BARRA           reduce using rule 7 (command -> SLOW .)
+    LETRAS          reduce using rule 7 (command -> SLOW .)
+    *               reduce using rule 7 (command -> SLOW .)
+    $end            reduce using rule 7 (command -> SLOW .)
+    ]               reduce using rule 7 (command -> SLOW .)
+
+
+state 8
+
+    (8) command -> BOUND .
+
+    .               reduce using rule 8 (command -> BOUND .)
+    ^               reduce using rule 8 (command -> BOUND .)
+    _               reduce using rule 8 (command -> BOUND .)
+    >               reduce using rule 8 (command -> BOUND .)
+    <               reduce using rule 8 (command -> BOUND .)
+    :               reduce using rule 8 (command -> BOUND .)
+    MACRONAME       reduce using rule 8 (command -> BOUND .)
+    BARRA           reduce using rule 8 (command -> BOUND .)
+    LETRAS          reduce using rule 8 (command -> BOUND .)
+    *               reduce using rule 8 (command -> BOUND .)
+    $end            reduce using rule 8 (command -> BOUND .)
+    ]               reduce using rule 8 (command -> BOUND .)
+
+
+state 9
+
+    (9) command -> ACM .
+
+    .               reduce using rule 9 (command -> ACM .)
+    ^               reduce using rule 9 (command -> ACM .)
+    _               reduce using rule 9 (command -> ACM .)
+    >               reduce using rule 9 (command -> ACM .)
+    <               reduce using rule 9 (command -> ACM .)
+    :               reduce using rule 9 (command -> ACM .)
+    MACRONAME       reduce using rule 9 (command -> ACM .)
+    BARRA           reduce using rule 9 (command -> ACM .)
+    LETRAS          reduce using rule 9 (command -> ACM .)
+    *               reduce using rule 9 (command -> ACM .)
+    $end            reduce using rule 9 (command -> ACM .)
+    ]               reduce using rule 9 (command -> ACM .)
+
+
+state 10
+
+    (10) command -> MEGAPUSH .
+
+    .               reduce using rule 10 (command -> MEGAPUSH .)
+    ^               reduce using rule 10 (command -> MEGAPUSH .)
+    _               reduce using rule 10 (command -> MEGAPUSH .)
+    >               reduce using rule 10 (command -> MEGAPUSH .)
+    <               reduce using rule 10 (command -> MEGAPUSH .)
+    :               reduce using rule 10 (command -> MEGAPUSH .)
+    MACRONAME       reduce using rule 10 (command -> MEGAPUSH .)
+    BARRA           reduce using rule 10 (command -> MEGAPUSH .)
+    LETRAS          reduce using rule 10 (command -> MEGAPUSH .)
+    *               reduce using rule 10 (command -> MEGAPUSH .)
+    $end            reduce using rule 10 (command -> MEGAPUSH .)
+    ]               reduce using rule 10 (command -> MEGAPUSH .)
+
+
+state 11
+
+    (11) command -> MACRO .
+
+    .               reduce using rule 11 (command -> MACRO .)
+    ^               reduce using rule 11 (command -> MACRO .)
+    _               reduce using rule 11 (command -> MACRO .)
+    >               reduce using rule 11 (command -> MACRO .)
+    <               reduce using rule 11 (command -> MACRO .)
+    :               reduce using rule 11 (command -> MACRO .)
+    MACRONAME       reduce using rule 11 (command -> MACRO .)
+    BARRA           reduce using rule 11 (command -> MACRO .)
+    LETRAS          reduce using rule 11 (command -> MACRO .)
+    *               reduce using rule 11 (command -> MACRO .)
+    $end            reduce using rule 11 (command -> MACRO .)
+    ]               reduce using rule 11 (command -> MACRO .)
+
+
+state 12
+
+    (12) command -> PLAYMACRO .
+
+    .               reduce using rule 12 (command -> PLAYMACRO .)
+    ^               reduce using rule 12 (command -> PLAYMACRO .)
+    _               reduce using rule 12 (command -> PLAYMACRO .)
+    >               reduce using rule 12 (command -> PLAYMACRO .)
+    <               reduce using rule 12 (command -> PLAYMACRO .)
+    :               reduce using rule 12 (command -> PLAYMACRO .)
+    MACRONAME       reduce using rule 12 (command -> PLAYMACRO .)
+    BARRA           reduce using rule 12 (command -> PLAYMACRO .)
+    LETRAS          reduce using rule 12 (command -> PLAYMACRO .)
+    *               reduce using rule 12 (command -> PLAYMACRO .)
+    $end            reduce using rule 12 (command -> PLAYMACRO .)
+    ]               reduce using rule 12 (command -> PLAYMACRO .)
+
+
+state 13
+
+    (13) command -> LETTERNOTE .
+
+    .               reduce using rule 13 (command -> LETTERNOTE .)
+    ^               reduce using rule 13 (command -> LETTERNOTE .)
+    _               reduce using rule 13 (command -> LETTERNOTE .)
+    >               reduce using rule 13 (command -> LETTERNOTE .)
+    <               reduce using rule 13 (command -> LETTERNOTE .)
+    :               reduce using rule 13 (command -> LETTERNOTE .)
+    MACRONAME       reduce using rule 13 (command -> LETTERNOTE .)
+    BARRA           reduce using rule 13 (command -> LETTERNOTE .)
+    LETRAS          reduce using rule 13 (command -> LETTERNOTE .)
+    *               reduce using rule 13 (command -> LETTERNOTE .)
+    $end            reduce using rule 13 (command -> LETTERNOTE .)
+    ]               reduce using rule 13 (command -> LETTERNOTE .)
+
+
+state 14
+
+    (14) command -> PAUSE .
+
+    .               reduce using rule 14 (command -> PAUSE .)
+    ^               reduce using rule 14 (command -> PAUSE .)
+    _               reduce using rule 14 (command -> PAUSE .)
+    >               reduce using rule 14 (command -> PAUSE .)
+    <               reduce using rule 14 (command -> PAUSE .)
+    :               reduce using rule 14 (command -> PAUSE .)
+    MACRONAME       reduce using rule 14 (command -> PAUSE .)
+    BARRA           reduce using rule 14 (command -> PAUSE .)
+    LETRAS          reduce using rule 14 (command -> PAUSE .)
+    *               reduce using rule 14 (command -> PAUSE .)
+    $end            reduce using rule 14 (command -> PAUSE .)
+    ]               reduce using rule 14 (command -> PAUSE .)
+
+
+state 15
+
+    (15) DOT -> . .
+    (22) BOUND -> . . ~ .
+
+    .               reduce using rule 15 (DOT -> . .)
+    ^               reduce using rule 15 (DOT -> . .)
+    _               reduce using rule 15 (DOT -> . .)
+    >               reduce using rule 15 (DOT -> . .)
+    <               reduce using rule 15 (DOT -> . .)
+    :               reduce using rule 15 (DOT -> . .)
+    MACRONAME       reduce using rule 15 (DOT -> . .)
+    BARRA           reduce using rule 15 (DOT -> . .)
+    LETRAS          reduce using rule 15 (DOT -> . .)
+    *               reduce using rule 15 (DOT -> . .)
+    $end            reduce using rule 15 (DOT -> . .)
+    ]               reduce using rule 15 (DOT -> . .)
+    ~               shift and go to state 26
+
+
+state 16
+
+    (16) UP -> ^ .
+    (23) MEGAPUSH -> ^ . { INT }
+
+    .               reduce using rule 16 (UP -> ^ .)
+    ^               reduce using rule 16 (UP -> ^ .)
+    _               reduce using rule 16 (UP -> ^ .)
+    >               reduce using rule 16 (UP -> ^ .)
+    <               reduce using rule 16 (UP -> ^ .)
+    :               reduce using rule 16 (UP -> ^ .)
+    MACRONAME       reduce using rule 16 (UP -> ^ .)
+    BARRA           reduce using rule 16 (UP -> ^ .)
+    LETRAS          reduce using rule 16 (UP -> ^ .)
+    *               reduce using rule 16 (UP -> ^ .)
+    $end            reduce using rule 16 (UP -> ^ .)
+    ]               reduce using rule 16 (UP -> ^ .)
+    {               shift and go to state 27
+
+
+state 17
+
+    (17) DOWN -> _ .
+    (24) MEGAPUSH -> _ . { INT }
+
+    .               reduce using rule 17 (DOWN -> _ .)
+    ^               reduce using rule 17 (DOWN -> _ .)
+    _               reduce using rule 17 (DOWN -> _ .)
+    >               reduce using rule 17 (DOWN -> _ .)
+    <               reduce using rule 17 (DOWN -> _ .)
+    :               reduce using rule 17 (DOWN -> _ .)
+    MACRONAME       reduce using rule 17 (DOWN -> _ .)
+    BARRA           reduce using rule 17 (DOWN -> _ .)
+    LETRAS          reduce using rule 17 (DOWN -> _ .)
+    *               reduce using rule 17 (DOWN -> _ .)
+    $end            reduce using rule 17 (DOWN -> _ .)
+    ]               reduce using rule 17 (DOWN -> _ .)
+    {               shift and go to state 28
+
+
+state 18
+
+    (18) FAST -> > .
+
+    .               reduce using rule 18 (FAST -> > .)
+    ^               reduce using rule 18 (FAST -> > .)
+    _               reduce using rule 18 (FAST -> > .)
+    >               reduce using rule 18 (FAST -> > .)
+    <               reduce using rule 18 (FAST -> > .)
+    :               reduce using rule 18 (FAST -> > .)
+    MACRONAME       reduce using rule 18 (FAST -> > .)
+    BARRA           reduce using rule 18 (FAST -> > .)
+    LETRAS          reduce using rule 18 (FAST -> > .)
+    *               reduce using rule 18 (FAST -> > .)
+    $end            reduce using rule 18 (FAST -> > .)
+    ]               reduce using rule 18 (FAST -> > .)
+
+
+state 19
+
+    (19) SLOW -> < .
+
+    .               reduce using rule 19 (SLOW -> < .)
+    ^               reduce using rule 19 (SLOW -> < .)
+    _               reduce using rule 19 (SLOW -> < .)
+    >               reduce using rule 19 (SLOW -> < .)
+    <               reduce using rule 19 (SLOW -> < .)
+    :               reduce using rule 19 (SLOW -> < .)
+    MACRONAME       reduce using rule 19 (SLOW -> < .)
+    BARRA           reduce using rule 19 (SLOW -> < .)
+    LETRAS          reduce using rule 19 (SLOW -> < .)
+    *               reduce using rule 19 (SLOW -> < .)
+    $end            reduce using rule 19 (SLOW -> < .)
+    ]               reduce using rule 19 (SLOW -> < .)
+
+
+state 20
+
+    (21) ACM -> : .
+
+    .               reduce using rule 21 (ACM -> : .)
+    ^               reduce using rule 21 (ACM -> : .)
+    _               reduce using rule 21 (ACM -> : .)
+    >               reduce using rule 21 (ACM -> : .)
+    <               reduce using rule 21 (ACM -> : .)
+    :               reduce using rule 21 (ACM -> : .)
+    MACRONAME       reduce using rule 21 (ACM -> : .)
+    BARRA           reduce using rule 21 (ACM -> : .)
+    LETRAS          reduce using rule 21 (ACM -> : .)
+    *               reduce using rule 21 (ACM -> : .)
+    $end            reduce using rule 21 (ACM -> : .)
+    ]               reduce using rule 21 (ACM -> : .)
+
+
+state 21
+
+    (25) MACRO -> MACRONAME . = [ music ]
+
+    =               shift and go to state 29
+
+
+state 22
+
+    (26) PLAYMACRO -> BARRA . MACRONAME
+
+    MACRONAME       shift and go to state 30
+
+
+state 23
+
+    (27) LETTERNOTE -> LETRAS .
+
+    .               reduce using rule 27 (LETTERNOTE -> LETRAS .)
+    ^               reduce using rule 27 (LETTERNOTE -> LETRAS .)
+    _               reduce using rule 27 (LETTERNOTE -> LETRAS .)
+    >               reduce using rule 27 (LETTERNOTE -> LETRAS .)
+    <               reduce using rule 27 (LETTERNOTE -> LETRAS .)
+    :               reduce using rule 27 (LETTERNOTE -> LETRAS .)
+    MACRONAME       reduce using rule 27 (LETTERNOTE -> LETRAS .)
+    BARRA           reduce using rule 27 (LETTERNOTE -> LETRAS .)
+    LETRAS          reduce using rule 27 (LETTERNOTE -> LETRAS .)
+    *               reduce using rule 27 (LETTERNOTE -> LETRAS .)
+    $end            reduce using rule 27 (LETTERNOTE -> LETRAS .)
+    ]               reduce using rule 27 (LETTERNOTE -> LETRAS .)
+
+
+state 24
+
+    (20) PAUSE -> * .
+
+    .               reduce using rule 20 (PAUSE -> * .)
+    ^               reduce using rule 20 (PAUSE -> * .)
+    _               reduce using rule 20 (PAUSE -> * .)
+    >               reduce using rule 20 (PAUSE -> * .)
+    <               reduce using rule 20 (PAUSE -> * .)
+    :               reduce using rule 20 (PAUSE -> * .)
+    MACRONAME       reduce using rule 20 (PAUSE -> * .)
+    BARRA           reduce using rule 20 (PAUSE -> * .)
+    LETRAS          reduce using rule 20 (PAUSE -> * .)
+    *               reduce using rule 20 (PAUSE -> * .)
+    $end            reduce using rule 20 (PAUSE -> * .)
+    ]               reduce using rule 20 (PAUSE -> * .)
+
+
+state 25
+
+    (2) music -> music command .
+
+    .               reduce using rule 2 (music -> music command .)
+    ^               reduce using rule 2 (music -> music command .)
+    _               reduce using rule 2 (music -> music command .)
+    >               reduce using rule 2 (music -> music command .)
+    <               reduce using rule 2 (music -> music command .)
+    :               reduce using rule 2 (music -> music command .)
+    MACRONAME       reduce using rule 2 (music -> music command .)
+    BARRA           reduce using rule 2 (music -> music command .)
+    LETRAS          reduce using rule 2 (music -> music command .)
+    *               reduce using rule 2 (music -> music command .)
+    $end            reduce using rule 2 (music -> music command .)
+    ]               reduce using rule 2 (music -> music command .)
+
+
+state 26
+
+    (22) BOUND -> . ~ . .
+
+    .               shift and go to state 31
+
+
+state 27
+
+    (23) MEGAPUSH -> ^ { . INT }
+
+    INT             shift and go to state 32
+
+
+state 28
+
+    (24) MEGAPUSH -> _ { . INT }
+
+    INT             shift and go to state 33
+
+
+state 29
+
+    (25) MACRO -> MACRONAME = . [ music ]
+
+    [               shift and go to state 34
+
+
+state 30
+
+    (26) PLAYMACRO -> BARRA MACRONAME .
+
+    .               reduce using rule 26 (PLAYMACRO -> BARRA MACRONAME .)
+    ^               reduce using rule 26 (PLAYMACRO -> BARRA MACRONAME .)
+    _               reduce using rule 26 (PLAYMACRO -> BARRA MACRONAME .)
+    >               reduce using rule 26 (PLAYMACRO -> BARRA MACRONAME .)
+    <               reduce using rule 26 (PLAYMACRO -> BARRA MACRONAME .)
+    :               reduce using rule 26 (PLAYMACRO -> BARRA MACRONAME .)
+    MACRONAME       reduce using rule 26 (PLAYMACRO -> BARRA MACRONAME .)
+    BARRA           reduce using rule 26 (PLAYMACRO -> BARRA MACRONAME .)
+    LETRAS          reduce using rule 26 (PLAYMACRO -> BARRA MACRONAME .)
+    *               reduce using rule 26 (PLAYMACRO -> BARRA MACRONAME .)
+    $end            reduce using rule 26 (PLAYMACRO -> BARRA MACRONAME .)
+    ]               reduce using rule 26 (PLAYMACRO -> BARRA MACRONAME .)
+
+
+state 31
+
+    (22) BOUND -> . ~ . .
+
+    .               reduce using rule 22 (BOUND -> . ~ . .)
+    ^               reduce using rule 22 (BOUND -> . ~ . .)
+    _               reduce using rule 22 (BOUND -> . ~ . .)
+    >               reduce using rule 22 (BOUND -> . ~ . .)
+    <               reduce using rule 22 (BOUND -> . ~ . .)
+    :               reduce using rule 22 (BOUND -> . ~ . .)
+    MACRONAME       reduce using rule 22 (BOUND -> . ~ . .)
+    BARRA           reduce using rule 22 (BOUND -> . ~ . .)
+    LETRAS          reduce using rule 22 (BOUND -> . ~ . .)
+    *               reduce using rule 22 (BOUND -> . ~ . .)
+    $end            reduce using rule 22 (BOUND -> . ~ . .)
+    ]               reduce using rule 22 (BOUND -> . ~ . .)
+
+
+state 32
+
+    (23) MEGAPUSH -> ^ { INT . }
+
+    }               shift and go to state 35
+
+
+state 33
+
+    (24) MEGAPUSH -> _ { INT . }
+
+    }               shift and go to state 36
+
+
+state 34
+
+    (25) MACRO -> MACRONAME = [ . music ]
+    (1) music -> . command
+    (2) music -> . music command
+    (3) command -> . DOT
+    (4) command -> . UP
+    (5) command -> . DOWN
+    (6) command -> . FAST
+    (7) command -> . SLOW
+    (8) command -> . BOUND
+    (9) command -> . ACM
+    (10) command -> . MEGAPUSH
+    (11) command -> . MACRO
+    (12) command -> . PLAYMACRO
+    (13) command -> . LETTERNOTE
+    (14) command -> . PAUSE
+    (15) DOT -> . .
+    (16) UP -> . ^
+    (17) DOWN -> . _
+    (18) FAST -> . >
+    (19) SLOW -> . <
+    (22) BOUND -> . . ~ .
+    (21) ACM -> . :
+    (23) MEGAPUSH -> . ^ { INT }
+    (24) MEGAPUSH -> . _ { INT }
+    (25) MACRO -> . MACRONAME = [ music ]
+    (26) PLAYMACRO -> . BARRA MACRONAME
+    (27) LETTERNOTE -> . LETRAS
+    (20) PAUSE -> . *
+
+    .               shift and go to state 15
+    ^               shift and go to state 16
+    _               shift and go to state 17
+    >               shift and go to state 18
+    <               shift and go to state 19
+    :               shift and go to state 20
+    MACRONAME       shift and go to state 21
+    BARRA           shift and go to state 22
+    LETRAS          shift and go to state 23
+    *               shift and go to state 24
+
+    music                          shift and go to state 37
+    command                        shift and go to state 2
+    DOT                            shift and go to state 3
+    UP                             shift and go to state 4
+    DOWN                           shift and go to state 5
+    FAST                           shift and go to state 6
+    SLOW                           shift and go to state 7
+    BOUND                          shift and go to state 8
+    ACM                            shift and go to state 9
+    MEGAPUSH                       shift and go to state 10
+    MACRO                          shift and go to state 11
+    PLAYMACRO                      shift and go to state 12
+    LETTERNOTE                     shift and go to state 13
+    PAUSE                          shift and go to state 14
+
+state 35
+
+    (23) MEGAPUSH -> ^ { INT } .
+
+    .               reduce using rule 23 (MEGAPUSH -> ^ { INT } .)
+    ^               reduce using rule 23 (MEGAPUSH -> ^ { INT } .)
+    _               reduce using rule 23 (MEGAPUSH -> ^ { INT } .)
+    >               reduce using rule 23 (MEGAPUSH -> ^ { INT } .)
+    <               reduce using rule 23 (MEGAPUSH -> ^ { INT } .)
+    :               reduce using rule 23 (MEGAPUSH -> ^ { INT } .)
+    MACRONAME       reduce using rule 23 (MEGAPUSH -> ^ { INT } .)
+    BARRA           reduce using rule 23 (MEGAPUSH -> ^ { INT } .)
+    LETRAS          reduce using rule 23 (MEGAPUSH -> ^ { INT } .)
+    *               reduce using rule 23 (MEGAPUSH -> ^ { INT } .)
+    $end            reduce using rule 23 (MEGAPUSH -> ^ { INT } .)
+    ]               reduce using rule 23 (MEGAPUSH -> ^ { INT } .)
+
+
+state 36
+
+    (24) MEGAPUSH -> _ { INT } .
+
+    .               reduce using rule 24 (MEGAPUSH -> _ { INT } .)
+    ^               reduce using rule 24 (MEGAPUSH -> _ { INT } .)
+    _               reduce using rule 24 (MEGAPUSH -> _ { INT } .)
+    >               reduce using rule 24 (MEGAPUSH -> _ { INT } .)
+    <               reduce using rule 24 (MEGAPUSH -> _ { INT } .)
+    :               reduce using rule 24 (MEGAPUSH -> _ { INT } .)
+    MACRONAME       reduce using rule 24 (MEGAPUSH -> _ { INT } .)
+    BARRA           reduce using rule 24 (MEGAPUSH -> _ { INT } .)
+    LETRAS          reduce using rule 24 (MEGAPUSH -> _ { INT } .)
+    *               reduce using rule 24 (MEGAPUSH -> _ { INT } .)
+    $end            reduce using rule 24 (MEGAPUSH -> _ { INT } .)
+    ]               reduce using rule 24 (MEGAPUSH -> _ { INT } .)
+
+
+state 37
+
+    (25) MACRO -> MACRONAME = [ music . ]
+    (2) music -> music . command
+    (3) command -> . DOT
+    (4) command -> . UP
+    (5) command -> . DOWN
+    (6) command -> . FAST
+    (7) command -> . SLOW
+    (8) command -> . BOUND
+    (9) command -> . ACM
+    (10) command -> . MEGAPUSH
+    (11) command -> . MACRO
+    (12) command -> . PLAYMACRO
+    (13) command -> . LETTERNOTE
+    (14) command -> . PAUSE
+    (15) DOT -> . .
+    (16) UP -> . ^
+    (17) DOWN -> . _
+    (18) FAST -> . >
+    (19) SLOW -> . <
+    (22) BOUND -> . . ~ .
+    (21) ACM -> . :
+    (23) MEGAPUSH -> . ^ { INT }
+    (24) MEGAPUSH -> . _ { INT }
+    (25) MACRO -> . MACRONAME = [ music ]
+    (26) PLAYMACRO -> . BARRA MACRONAME
+    (27) LETTERNOTE -> . LETRAS
+    (20) PAUSE -> . *
+
+    ]               shift and go to state 38
+    .               shift and go to state 15
+    ^               shift and go to state 16
+    _               shift and go to state 17
+    >               shift and go to state 18
+    <               shift and go to state 19
+    :               shift and go to state 20
+    MACRONAME       shift and go to state 21
+    BARRA           shift and go to state 22
+    LETRAS          shift and go to state 23
+    *               shift and go to state 24
+
+    command                        shift and go to state 25
+    DOT                            shift and go to state 3
+    UP                             shift and go to state 4
+    DOWN                           shift and go to state 5
+    FAST                           shift and go to state 6
+    SLOW                           shift and go to state 7
+    BOUND                          shift and go to state 8
+    ACM                            shift and go to state 9
+    MEGAPUSH                       shift and go to state 10
+    MACRO                          shift and go to state 11
+    PLAYMACRO                      shift and go to state 12
+    LETTERNOTE                     shift and go to state 13
+    PAUSE                          shift and go to state 14
+
+state 38
+
+    (25) MACRO -> MACRONAME = [ music ] .
+
+    .               reduce using rule 25 (MACRO -> MACRONAME = [ music ] .)
+    ^               reduce using rule 25 (MACRO -> MACRONAME = [ music ] .)
+    _               reduce using rule 25 (MACRO -> MACRONAME = [ music ] .)
+    >               reduce using rule 25 (MACRO -> MACRONAME = [ music ] .)
+    <               reduce using rule 25 (MACRO -> MACRONAME = [ music ] .)
+    :               reduce using rule 25 (MACRO -> MACRONAME = [ music ] .)
+    MACRONAME       reduce using rule 25 (MACRO -> MACRONAME = [ music ] .)
+    BARRA           reduce using rule 25 (MACRO -> MACRONAME = [ music ] .)
+    LETRAS          reduce using rule 25 (MACRO -> MACRONAME = [ music ] .)
+    *               reduce using rule 25 (MACRO -> MACRONAME = [ music ] .)
+    $end            reduce using rule 25 (MACRO -> MACRONAME = [ music ] .)
+    ]               reduce using rule 25 (MACRO -> MACRONAME = [ music ] .)
+
